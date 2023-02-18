@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 function Movie({ id }) {
-  id = 1;
+  let key = "23745abeb5bbc1db58ce36cad9f41342";
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
     axios
-      .get(`https://api.themoviedb.org/3/movie/${id}?api_key=TU_CLAVE_DE_API`)
+      .get(`https://api.themoviedb.org/3/movie/${id}?api_key=${key}`)
       .then((response) => {
         setMovie(response.data);
       })
